@@ -1,7 +1,7 @@
 # Batch cheat sheet
 
 ## echo
-```
+```batch
 rem 실행 명령 숨김
 echo off
 
