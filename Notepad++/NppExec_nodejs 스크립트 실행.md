@@ -32,6 +32,7 @@ NppExec 플러그인을 이용하면 nodejs 스크립트를 실행 할 수 있�
 
 - 콘솔창 한글 깨지는 경우
     - 플러그인 > NppExec > Console Output... 메뉴 실행 후 실행 환경에 맞게 인코딩 설정한다.
+
         ![Console Output/Input encoding](./assets/NppExec_console_encoding.png)
 
 
