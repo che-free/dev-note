@@ -55,13 +55,13 @@ function main() {
 /**
  * README.md 파일을 만든다.
  */
-function makeReadmeFile(readmeDir, allDirs) {
-    //console.log("README :: " + readmeDir.path);
+function makeReadmeFile(baseDir, allDirs) {
+    //console.log("README :: " + baseDir.path);
 
     let content = "";
 
     // 디렉토리 정렬
-    readmeDir.dirs.sort(function (a, b) {
+    baseDir.dirs.sort(function (a, b) {
         let order1 = getOrderNo(a);
         let order2 = getOrderNo(b);
 
@@ -73,25 +73,25 @@ function makeReadmeFile(readmeDir, allDirs) {
     });
 
     // 1레벨
-    let title = getHeaderTitle(readmeDir.path);
-
+    let title = getHeaderTitle(baseDir.path);
     content += `# ${title}` + "\r\n";
 
-    readmeDir.files.forEach((file) => {
-        content += makeLinkItem(readmeDir.path, file);
+    baseDir.files.forEach((file) => {
+        content += makeLinkItem(baseDir.path, file);
     });
 
     // 2레벨
-    readmeDir.dirs.forEach((dir1) => {
+    baseDir.dirs.forEach((dir1) => {
         allDirs.forEach((dir2) => {
-            if (dir2.path == dir1 || dir2.path.startsWith(dir1 + "/")) {
-                if (dir2.fileCount > 0) {
-                    if (dir2.path == dir1) {
-                        title = getHeaderTitle(dir2.path);
+            if (dir2.fileCount > 0) {
+                if (dir2.path == dir1) {
+                    title = getHeaderTitle(dir2.path);
+                    content += "\r\n\r\n" + `## ${title}` + "\r\n";
 
-                        content += "\r\n\r\n" + `## ${title}` + "\r\n";
-                    }
-
+                    dir2.files.forEach((file) => {
+                        content += makeLinkItem(dir1, file);
+                    });
+                } else if (dir2.path.startsWith(dir1 + "/")) {
                     dir2.files.forEach((file) => {
                         content += makeLinkItem(dir1, file);
                     });
@@ -102,7 +102,7 @@ function makeReadmeFile(readmeDir, allDirs) {
 
     content += "\r\n";
 
-    saveReadmeFile(readmeDir.path, content);
+    saveReadmeFile(baseDir.path, content);
 }
 
 
@@ -163,9 +163,7 @@ function getAllMarkdownDirectories() {
         const filenames = fs.readdirSync(dir);
         const dirInfo = {
             path: (dir == ROOT_PATH ? "/" : dir.substring(ROOT_PATH.length).replaceAll("\\", "/")),
-            depth: null,
             fileCount: 0,
-            count: 0,
             dirs: [],
             files: [],
         }
@@ -197,8 +195,6 @@ function getAllMarkdownDirectories() {
             }
         }
 
-        dirInfo.depth = (dirInfo.path == "/" ? 0 : dirInfo.path.split("/").length - 1);
-
         files.push(dirInfo);
 
         return files;
@@ -228,9 +224,9 @@ function getAllMarkdownDirectories() {
 /**
  * README.md 파일에 저장한다.
  */
-function saveReadmeFile(readmePath, content) {
+function saveReadmeFile(filePath, content) {
     const fs = require('fs');
-    const fileName = path.resolve(ROOT_PATH + readmePath + "/README.md");
+    const fileName = path.resolve(ROOT_PATH + filePath + "/README.md");
 
     console.log("README :: " + fileName);
 
