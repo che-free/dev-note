@@ -22,8 +22,9 @@ const DEFAULT_ORDER_NO = 5000;
 
 // 디렉토리, 파일 메타 정보
 const META_DATA = {
-    "/": { orderNo: null, title: "개발 메모" },
-    //"/MySQL(MariaDB)": { orderNo: null, title: "MYSQL" },
+    "/": { orderNo: null, title: "개발 노트" },
+    //"/MySQL(MariaDB)": { orderNo: 100, title: null },
+    //"/NodeJS": { orderNo: 120, title: null },
 }
 
 
@@ -42,18 +43,10 @@ function main() {
 
     //console.log(JSON.stringify(allDirs, null, 4));
 
-    allDirs.forEach((dir1) => {
-        if (dir1.totalCount > 0) {
-            const dirs = [];
-
-            allDirs.forEach((dir2) => {
-                if (dir1.path == "/" || dir2.path == dir1.path || dir2.path.startsWith(dir1.path + "/")) {
-                    dirs.push(dir2);
-                }
-            });
-
+    allDirs.forEach((dir) => {
+        if (dir.fileCount > 0) {
             // README.md 파일 생성
-            makeReadmeFile(dir1, JSON.parse(JSON.stringify(dirs)));
+            makeReadmeFile(dir, allDirs);
         }
     });
 }
@@ -62,38 +55,49 @@ function main() {
 /**
  * README.md 파일을 만든다.
  */
-function makeReadmeFile(readmeDir, dirs) {
+function makeReadmeFile(readmeDir, allDirs) {
     //console.log("README :: " + readmeDir.path);
 
     let content = "";
 
-    // TODO: 디렉토리 정렬
+    // 디렉토리 정렬
+    readmeDir.dirs.sort(function (a, b) {
+        let order1 = getOrderNo(a);
+        let order2 = getOrderNo(b);
 
-    dirs.forEach((dir) => {
-        let title = null;
-        let basePath = null;
-
-        if (dir.depth == readmeDir.depth) {
-            title = getHeaderText(dir);
-
-            content += `# ${title}` + "\r\n";
-        } else if (dir.depth == readmeDir.depth + 1 && dir.totalCount > 0) {
-            title = getHeaderText(dir);
-
-            content += "\r\n\r\n" + `## ${title}` + "\r\n";
+        if (order1 != order2) {
+            return order1 > order2 ? 1 : -1;
         }
 
-        if (dir.depth == readmeDir.depth) {
-            basePath = dir.path.split("/").slice(0, readmeDir.depth + 1).join("/");
-        } else {
-            basePath = dir.path.split("/").slice(0, readmeDir.depth + 2).join("/");
-        }
+        return a > b ? 1 : -1;
+    });
 
-        if (dir.files.length > 0) {
-            dir.files.forEach((file) => {
-                content += makeLinkItem(basePath, file);
-            });
-        }
+    // 1레벨
+    let title = getHeaderTitle(readmeDir.path);
+
+    content += `# ${title}` + "\r\n";
+
+    readmeDir.files.forEach((file) => {
+        content += makeLinkItem(readmeDir.path, file);
+    });
+
+    // 2레벨
+    readmeDir.dirs.forEach((dir1) => {
+        allDirs.forEach((dir2) => {
+            if (dir2.path == dir1 || dir2.path.startsWith(dir1 + "/")) {
+                if (dir2.fileCount > 0) {
+                    if (dir2.path == dir1) {
+                        title = getHeaderTitle(dir2.path);
+
+                        content += "\r\n\r\n" + `## ${title}` + "\r\n";
+                    }
+
+                    dir2.files.forEach((file) => {
+                        content += makeLinkItem(dir1, file);
+                    });
+                }
+            }
+        });
     });
 
     content += "\r\n";
@@ -105,9 +109,9 @@ function makeReadmeFile(readmeDir, dirs) {
 /**
  * 경로명으로 Readme 헤더 텍스트를 구한다.
  */
-function getHeaderText(dir) {
-    let meta = META_DATA[dir.path];
-    let title = dir.path.split("/").pop();
+function getHeaderTitle(dirPath) {
+    let meta = META_DATA[dirPath];
+    let title = dirPath.split("/").pop();
 
     if (meta && meta.title) {
         title = meta.title;
@@ -118,7 +122,22 @@ function getHeaderText(dir) {
 
 
 /**
- * Markdown 파일의 링크 텍스트를 만든다.
+ * 경로명으로 정렬값을 구한다.
+ */
+function getOrderNo(dirPath) {
+    let meta = META_DATA[dirPath];
+    let orderNo = DEFAULT_ORDER_NO;
+
+    if (meta && meta.orderNo) {
+        orderNo = meta.orderNo;
+    }
+
+    return orderNo;
+}
+
+
+/**
+ * Markdown 파일 링크 텍스트를 만든다.
  */
 function makeLinkItem(basePath, file) {
     let text = file.substr(basePath.length + 1);;
@@ -145,8 +164,9 @@ function getAllMarkdownDirectories() {
         const dirInfo = {
             path: (dir == ROOT_PATH ? "/" : dir.substring(ROOT_PATH.length).replaceAll("\\", "/")),
             depth: null,
-            totalCount: 0,
+            fileCount: 0,
             count: 0,
+            dirs: [],
             files: [],
         }
 
@@ -164,14 +184,15 @@ function getAllMarkdownDirectories() {
                 const extname = path.extname(file);
                 const filePath = file.substring(ROOT_PATH.length).replaceAll("\\", "/");
 
-
                 if (extname != ".md") {
                     continue;
                 }
 
-                dirInfo.count++;
                 dirInfo.files.push(filePath);
             } else if (stats.isDirectory()) {
+                const filePath = file.substring(ROOT_PATH.length).replaceAll("\\", "/");
+
+                dirInfo.dirs.push(filePath);
                 walkSync(file, files);
             }
         }
@@ -190,7 +211,7 @@ function getAllMarkdownDirectories() {
     dirs.forEach((dir1) => {
         dirs.forEach((dir2) => {
             if (dir1.path == "/" || dir2.path == dir1.path || dir2.path.startsWith(dir1.path + "/")) {
-                dir1.totalCount += dir2.files.length;
+                dir1.fileCount += dir2.files.length;
             }
         });
     });
