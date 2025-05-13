@@ -69,7 +69,7 @@ function makeReadmeFile(baseDir, allDirs) {
             return order1 > order2 ? 1 : -1;
         }
 
-        return a > b ? 1 : -1;
+        return a.toLowerCase() > b.toLowerCase() ? 1 : -1;
     });
 
     // 1레벨
@@ -214,7 +214,7 @@ function getAllMarkdownDirectories() {
 
     // 디렉토리 리스트 정렬
     dirs.sort(function (a, b) {
-        return a.path > b.path ? 1 : -1;
+        return a.path.toLowerCase() > b.path.toLowerCase() ? 1 : -1;
     });
 
     return dirs;
