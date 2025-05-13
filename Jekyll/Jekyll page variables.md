@@ -1,7 +1,3 @@
----
-title:  ""
----
-
 # Jekyll Page variables
 
 > Page Variables 참고 https://jekyllrb.com/docs/variables/
