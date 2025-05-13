@@ -9,6 +9,10 @@
 - [curl examples](https://github.com/che-free/dev-note/blob/main/curl/curl%20examples.md)
 
 
+## jQuery
+- [jQuery AJAX examples](https://github.com/che-free/dev-note/blob/main/jQuery/jQuery%20AJAX%20examples.md)
+
+
 ## MySQL(MariaDB)
 - [MySQL SQL code snippets](https://github.com/che-free/dev-note/blob/main/MySQL(MariaDB)/MySQL%20SQL%20code%20snippets.md)
 
