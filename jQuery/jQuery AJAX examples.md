@@ -2,9 +2,9 @@
 
 
 ### 참고 사이트
-- [jQuery.ajax()](https://api.jquery.com/jquery.ajax/){:target="_blank"}
-- [REST test test...](https://resttesttest.com/){:target="_blank"}
-- [httpbin.org](https://httpbin.org/){:target="_blank"}
+- [jQuery.ajax()](https://api.jquery.com/jquery.ajax/)
+- [REST test test...](https://resttesttest.com/)
+- [httpbin.org](https://httpbin.org/)
 
 
 ### 가장 간단한 ajax
