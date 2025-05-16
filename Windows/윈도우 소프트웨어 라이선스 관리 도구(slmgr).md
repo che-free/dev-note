@@ -1,5 +1,6 @@
-# 윈도우 정품 인증 관리 slmgr.vbs
+# 윈도우 소프트웨어 라이선스 관리 도구(slmgr)
 
+slmgr : Windows 소프트웨어 라이선스 관리 도구
 
 ## 참고
 - 볼륨 정품 인증 정보를 얻기 위한 Slmgr.vbs 옵션   
@@ -9,13 +10,14 @@
 ## slmgr 옵션
 | 명령 | 설명 |
 |------|------|
-| slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx | 제품 키 설치 |
+| slmgr| 도움말 표시 |
+| slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx | 제품 키 설치(기존 키 바꾸기) |
+| slmgr /ato | 정품 인증 |
 | slmgr /dli | 라이선스 정보 표시 |
 | slmgr /dlv | 자세한 라이선스 정보 표시 |
-| slmgr /xpr | 정품 인증 만료 날짜 표시 |
+| slmgr /xpr | 현재 라이선스 상태의 만료 날짜 |
+| slmgr /cpky | 레지스트리에서 제품 키 삭제 (공개 공격 방지) |
 | slmgr /upk | 설치된 제품 키 삭제 (제품 키가 설치되지 않은 상태로 변경) |
-| slmgr /cpky | 레지스트리에서 제품 키 삭제 (제품 키 도난 방지 목적 등) |
-| slmgr /ato | 온라인 정품 인증 시도 (KMS 볼륨 라이선스 키 인증 시도) |
 
 
 <!--
