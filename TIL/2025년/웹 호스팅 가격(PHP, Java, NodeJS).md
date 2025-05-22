@@ -21,7 +21,7 @@
 - 웹 용량 : 4GB
 
 
-### 개발 언어별 호스팅 > Tomcat JSP > 일반형
+### Tomcat JSP > 일반형
 - Tomcat 10.0.x, 8.5.x
 - OpenJDK 17, 11, 8
 - 단독 Tomcat 서버
@@ -30,7 +30,7 @@
 - 웹 용량 : 900MB
 
 
-### 개발 언어별 호스팅 > Tomcat JSP > 비즈니스
+### Tomcat JSP > 비즈니스
 - Tomcat 10.0.x, 8.5.x
 - OpenJDK 17, 11, 8
 - 단독 Tomcat 서버
@@ -39,7 +39,7 @@
 - 웹 용량 : 2GB
 
 
-### 개발 언어별 호스팅 > node.js > 일반형
+### node.js > 일반형
 - node.js v14, v12
 - git 지원
 - 단독 Tomcat 서버
@@ -49,7 +49,7 @@
 - 메모리 : 400MB
 
 
-### 개발 언어별 호스팅 > node.js > 비즈니스
+### node.js > 비즈니스
 - node.js v14, v12
 - git 지원
 - 단독 Tomcat 서버
