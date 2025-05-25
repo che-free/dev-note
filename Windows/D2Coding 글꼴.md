@@ -25,6 +25,7 @@ v1.2 버전부터는 일부 전각 문자가 반각 문자로 표시되고 있�
 ```
 *** D2Coding v1.1
 ------------------------------------------
+123456789012345678901234567890.... 숫자
 ABCDEFGHIJKLMNOPQRSTUVWXYZ........ 영문 대문자
 abcdefghijklmnopqrstuvwxyz........ 영문 소문자
 1234567890123456789012345678...... 숫자
@@ -34,8 +35,8 @@ abcdefghijklmnopqrstuvwxyz........ 영문 소문자
 !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~.. ASCII 특수문자
 ＃＆＊＠※☆★○●◎□■▣▒...... 전각 특수문자
 ⓐⓑⓒ①②③⒜⒝⒞⑴⑵⑶.......... 원문자
-< > <= >= == ===.!= <> >> << =>... ligature
-<.>.<=.>=.==.===.!=.<>.>>.<<.=>... ligature
+< > <= >= == ===.!= <> >> << => .. ligature
+123456789012345678901234567890.... 숫자
 ```
 
 
@@ -44,28 +45,36 @@ abcdefghijklmnopqrstuvwxyz........ 영문 소문자
 
 <table>
 <tr>
-    <td>글꼴</td>
-    <td>글꼴</td>
+<td>글꼴</td>
+<td>글꼴</td>
 </tr>
 <tr>
-    <td>
-D2Coding v1.3.2<br>
+<td>
+
+**D2Coding v1.3.2**<br>
 ![D2Coding v1.3.2](./assets/d2coding/d2coding_v1.3.2.png)
-    </td>
-    <td>
-D2Coding v1.3.2<br>
+
+</td>
+<td>
+
+**D2Coding ligature v1.3.2**<br>
 ![D2Coding ligature v1.3.2](./assets/d2coding/d2coding_ligature_v1.3.2.png)
-    </td>
+
+</td>
 </tr>
 <tr>
-    <td>
-D2Coding v1.2<br>
+<td>
+
+**D2Coding v1.2**<br>
 ![D2Coding v1.2](./assets/d2coding/d2coding_v1.2.png)
-    </td>
-    <td>
-D2Coding v1.1<br>
+
+</td>
+<td>
+
+**D2Coding v1.1**<br>
 ![D2Coding v1.1](./assets/d2coding/d2coding_v1.1.png)
-    </td>
+
+</td>
 </tr>
 </table>
 
