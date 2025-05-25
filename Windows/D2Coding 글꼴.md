@@ -23,13 +23,11 @@ v1.2 버전부터는 일부 전각 문자가 반각 문자로 표시되고 있�
 
 ### 글꼴 테스트용 텍스트
 ```
-*** D2Coding v1.1
+* D2Coding v1.1
 ------------------------------------------
 123456789012345678901234567890.... 숫자
-ABCDEFGHIJKLMNOPQRSTUVWXYZ........ 영문 대문자
-abcdefghijklmnopqrstuvwxyz........ 영문 소문자
-1234567890123456789012345678...... 숫자
- 1 2 3 4 5 6 7 8 9 0 1 2 3 4...... 공백+숫자
+ABCDEFGHIJKLMNOPQRSTUVWXYZ........ 대문자
+abcdefghijklmnopqrstuvwxyz........ 소문자
 가나다라마바사아자차카타파하...... 한글
 １２３４５６７８９０ＡＢＣＤ...... 전각 문자
 !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~.. ASCII 특수문자
@@ -40,14 +38,11 @@ abcdefghijklmnopqrstuvwxyz........ 영문 소문자
 ```
 
 
+
 ### 글꼴 차이점
-- D2Coding, Consolas, 나눔고딕코딩, 돋움체, 굴림체, 맑은고딕
+- D2Coding, Consolas, 나눔고딕코딩, 굴림체, 맑은고딕
 
 <table>
-<tr>
-<td>글꼴</td>
-<td>글꼴</td>
-</tr>
 <tr>
 <td>
 
@@ -76,12 +71,47 @@ abcdefghijklmnopqrstuvwxyz........ 영문 소문자
 
 </td>
 </tr>
-</table>
+<tr>
+<td>
 
-| 버전         | 이미지                     |
-| ------------ | -------------------------- |
-| v1.3.2       | ![D2Coding v1.3.2](./assets/d2coding/d2coding_v1.3.2.png) ![D2Coding ligature v1.3.2](./assets/d2coding/d2coding_ligature_v1.3.2.png) |
-| v1.2         | ![D2Coding v1.2](./assets/d2coding/d2coding_v1.2.png) |
-| v1.1         | ![D2Coding v1.2](./assets/d2coding/d2coding_v1.1.png) |
-| v1.0         | ![D2Coding v1.2](./assets/d2coding/d2coding_v1.0.png) |
+**굴림체**<br>
+![굴림체](./assets/d2coding/gulimche.png)
+
+</td>
+<td>
+
+**돋움체**<br>
+![돋움체](./assets/d2coding/dotumche.png)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Consolas**<br>
+![Consolas](./assets/d2coding/consolas.png)
+
+</td>
+<td>
+
+**Consolas + 맑은고딕**<br>
+![Consolas + 맑은고딕](./assets/d2coding/consolas_malgungothic.png)
+
+</td>
+</tr>
+<tr>
+<td>
+
+**맑은고딕**<br>
+![맑은고딕](./assets/d2coding/malgungothic.png)
+
+</td>
+<td>
+
+**나눔고딕코딩**<br>
+![나눔고딕코딩](./assets/d2coding/nanumgothiccoding.png)
+
+</td>
+</tr>
+</table>
 
