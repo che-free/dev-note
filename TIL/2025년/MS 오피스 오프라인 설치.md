@@ -30,10 +30,29 @@
     setup /configure config.xml
     ```
 
-## 참고) Office 2019 Product IDs
+## 참고) 주요 Office Product IDs
 - HomeBusiness2019Retail
-- ProPlus2019Retail
+- HomeBusiness2021Retail
+- HomeBusiness2024Retail
+- HomeStudent2019Retail
+- HomeStudent2021Retail
+- Home2024Retail
+- Personal2019Retail
+- Personal2021Retail
+- Professional2019Retail
+- Professional2021Retail
+- Professional2024Retail
 - ProPlus2019Volume
+- ProPlus2021Volume
+- ProPlus2024Volume
+- ProPlusSPLA2021Volume
+- ProPlus2019Retail
+- ProPlus2021Retail
+- ProPlus2024Retail
+- Standard2019Volume
+- Standard2021Volume
+- StandardSPLA2021Volume
+- Standard2024Volume
 
 
 ## Office Deployment Tool(ODT)
