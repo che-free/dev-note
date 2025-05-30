@@ -1,6 +1,15 @@
 # MS 오피스 오프라인 설치
 
 
+
+## 방법1) 설치 이미지 파일 이용
+
+
+## 방법2) 
+
+
+
+
 ## 오프라인 설치 파일 준비
 1. Office Deployment Tool(ODT) 다운로드<br>
     https://www.microsoft.com/en-us/search/explore?q=Office+Deployment+Tool
