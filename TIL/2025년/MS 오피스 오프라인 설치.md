@@ -39,14 +39,17 @@
     ```
 
 ## 참고) 주요 Office Product IDs
+- HomeBusinessRetail (Office Home & Business 2016)
 - HomeBusiness2019Retail
 - HomeBusiness2021Retail
 - HomeBusiness2024Retail
+- HomeStudentRetail (Office Home & Student 2016)
 - HomeStudent2019Retail
 - HomeStudent2021Retail
 - Home2024Retail
 - Personal2019Retail
 - Personal2021Retail
+- ProfessionalRetail (Office Professional 2016)
 - Professional2019Retail
 - Professional2021Retail
 - Professional2024Retail
