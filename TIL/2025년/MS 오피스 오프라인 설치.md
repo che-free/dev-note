@@ -38,32 +38,36 @@
     setup /configure config.xml
     ```
 
+
 ## 참고) 주요 Office Product IDs
-- HomeBusinessRetail (Office Home & Business 2016)
-- HomeBusiness2019Retail
-- HomeBusiness2021Retail
-- HomeBusiness2024Retail
-- HomeStudentRetail (Office Home & Student 2016)
-- HomeStudent2019Retail
-- HomeStudent2021Retail
-- Home2024Retail
-- Personal2019Retail
-- Personal2021Retail
-- ProfessionalRetail (Office Professional 2016)
-- Professional2019Retail
-- Professional2021Retail
-- Professional2024Retail
-- ProPlus2019Volume
-- ProPlus2021Volume
-- ProPlus2024Volume
-- ProPlusSPLA2021Volume
-- ProPlus2019Retail
-- ProPlus2021Retail
-- ProPlus2024Retail
-- Standard2019Volume
-- Standard2021Volume
-- StandardSPLA2021Volume
-- Standard2024Volume
+- Office 2024
+    - Home2024Retail
+    - HomeBusiness2024Retail
+    - Standard2024Volume
+    - Professional2024Retail
+    - ProPlus2024Retail
+    - ProPlus2024Volume
+- Office 2021
+    - Personal2021Retail
+    - HomeStudent2021Retail
+    - HomeBusiness2021Retail
+    - Standard2021Volume
+    - Professional2021Retail
+    - ProPlus2021Retail
+    - ProPlus2021Volume
+- Office 2019
+    - Personal2019Retail
+    - HomeStudent2019Retail
+    - HomeBusiness2019Retail
+    - Standard2019Volume
+    - Professional2019Retail
+    - ProPlus2019Retail
+    - ProPlus2019Volume
+- Office 2016
+    - HomeStudentRetail
+    - HomeBusinessRetail
+    - ProfessionalRetail
+    - ProPlusRetail
 
 
 ## Office Deployment Tool(ODT)
