@@ -30,9 +30,13 @@ slmgr -xpr
 ## 오피스 KMS 정품 인증
 
 ###  KMS 클라이언트 제품 키
-- Office 2016 Profesional : XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
-- Office 2019 Profesional : NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
 - Office 2021 Profesional : FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
+- Office 2021 Standard : KDX7X-BNVR8-TXXGX-4Q7Y8-78VT3
+- Office 2019 Profesional : NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+- Office 2019 Standard : 6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK
+- Office 2016 Profesional : XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
+- Office 2016 Standard : JNRGM-WHDWX-FJJG3-K47QV-DRTFM
+
 
 
 ###  오피스 2019 정품 인증
@@ -45,9 +49,9 @@ cd /d %ProgramFiles%\Microsoft Office\Office16
 
 for /f %x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%x"
 
-cscript ospp.vbs /setprt:1688
 cscript ospp.vbs /unpkey:6MWKP >nul
 cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+cscript ospp.vbs /setprt:1688
 cscript ospp.vbs /sethst:kms8.msguides.com
 cscript ospp.vbs /act
 ```
@@ -56,4 +60,7 @@ cscript ospp.vbs /act
 ##  참고)
 - KMS(키 관리 서비스) 클라이언트 정품 인증 및 제품 키<br>
 https://learn.microsoft.com/ko-kr/windows-server/get-started/kms-client-activation-keys?tabs=server2025%2Cwindows1110ltsc%2Cversion1803%2Cwindows81
+- Office의 볼륨 정품 인증을 관리하는 도구<br>
+https://learn.microsoft.com/ko-kr/office/volume-license-activation/tools-to-manage-volume-activation-of-office
+
 

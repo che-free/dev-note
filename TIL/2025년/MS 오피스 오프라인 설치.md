@@ -4,6 +4,10 @@
 ## 방법1) 설치 이미지 파일 이용
 구글에서 Office Product IDs(ProPlus2019Retail, ProPlus2021Retail, ...)로 검색하면 설치용 이미지 파일(*.img)을 쉽게 구할 수 았다.
 
+### 이미지 파일명
+- Office 2016 Standard : SW_DVD5_Office_2016_W32_Korean_MLF_X20-41383.ISO
+- Office 2016 Professional Plus : SW_DVD5_Office_Professional_Plus_2016_W32_Korean_MLF_X20-41358.ISO
+
 
 ## 방법2) 오프라인 설치 파일 만들기
 아래 방법으로 오프라인 설치 파일을 만든다.
@@ -30,6 +34,10 @@
     ```dos
     setup /download config.xml
     ```
+
+> 아래 사이트에서 설정 파일을 생성 할 수 있다.<br>
+> https://config.office.com/deploymentsettings
+
 
 
 ## 오프라인 설치
@@ -87,7 +95,5 @@
 - Need Office 2019 Professional Plus offline isntaller<br>
     https://learn.microsoft.com/en-us/answers/questions/509099/need-office-2019-professional-plus-offline-isntall
     https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/en-US/ProPlus2019Retail.img
-
-
 
 
